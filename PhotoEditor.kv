@@ -1,0 +1,45 @@
+<EditorLayout>:
+    orientation: 'vertical'
+    spacing: 10
+    padding: 10
+
+    TextInput:
+        size_hint: 1,.2
+        id: image_name_input
+        hint_text: 'Enter image name'
+        on_text_validate: root.load_image()
+
+    BoxLayout:
+        spacing: 10
+        size_hint: 1,.4
+        Button:
+            text: 'Load Image'
+            on_release: root.load_image()
+
+        Button:
+            orientation: 'vertical'
+            text: 'Black and White'
+            on_release: root.apply_blackandwhite()
+
+        Button:
+            text: 'Inverse'
+            on_release: root.apply_invert()
+
+        Button:
+            text: 'Line Drawing'
+            on_release: root.apply_linedrawing()
+
+        Button:
+            text: 'Sepia'
+            on_release: root.apply_sepia()
+
+        Button:
+            text: 'Pointillism'
+            on_release: root.apply_pointillism()
+
+        Button:
+            text: 'Pixelate'
+            on_release: root.apply_filter('Pixelate')
+
+    Image:
+        id: display_area
